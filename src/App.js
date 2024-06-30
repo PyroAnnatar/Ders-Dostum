@@ -8,6 +8,7 @@ export default function app() {
     answer: "JavaScript kütüphanesi.",
     explanation: `Birinin framework diyebilme cüretini gösterdiğini duyarsanız, onu mümkün olduğunca bilgili bir şekilde düzeltmeniz, tercihen yanıtınıza " aslında..." diye başlamanız önemlidir.`,
   });
+  const [flipped, setFlipped] = useState(false);
 
   /* Challenge: 
 
@@ -29,7 +30,10 @@ export default function app() {
 
       {/*-------Aşağıdaki div'i düzenleyin------------*/}
 
-      <div className="flash-card">
+      <div
+        className={flipped ? "flash-card flipped" : "flash-card"}
+        onClick={() => setFlipped((prev) => !prev)}
+      >
         {/*-------Yukarıdaki div'i düzenleyin------------*/}
 
         <div className="flash-card-inner">
